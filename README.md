@@ -1,2 +1,2 @@
 # wl-rest-api
-Wizeline REST API for Golang course
+Wizeline REST API for programming course
