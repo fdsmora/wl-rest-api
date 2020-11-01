@@ -9,6 +9,6 @@ setup(
     description="Wizeline REST API for programming course",
     packages=find_packages(),
     include_package_data=True,
-    install_requires=["flask"],
+    install_requires=["flask", "requests"],
     extras_require={"test": ["pytest"]},
 )

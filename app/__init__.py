@@ -7,6 +7,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
+        JSONIFY_PRETTYPRINT_REGULAR = True,
     )
 
     if test_config is None:
@@ -22,7 +23,9 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
+    from . import weather
+    app.register_blueprint(weather.bp)
+
     @app.route('/hello')
     def hello():
         return 'Hello, World!'
